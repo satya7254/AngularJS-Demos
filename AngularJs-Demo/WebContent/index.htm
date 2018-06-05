@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <meta charset="ISO-8859-1"> -->
+    <title>AngularJa-Demo</title>
+    <script src="js/angular.min.js"></script>
+</head>
+<body>
+
+     <!-- Example for ng-app, ng-model, ng-bind Directives  -->
+     <div ng-app="">
+         <p>Name: <input type="text" ng-model="name"></p>
+         <p ng-bind="name"></p>
+     </div>
+     
+     <!-- Example for Expressions -->
+     <!-- <div ng-app="">
+          <p>Name: <input type="text" ng-model="name"></p>
+          <p>{{name}}</p>
+     </div> -->
+      
+      <!-- Example for ng-init Directive -->
+     <!-- <div data-ng-app="" data-ng-init="firstName='John'">
+        <p>The name is <span data-ng-bind="firstName"></span></p>
+     </div> --> 
+     
+     <!-- Example for ng-repeat Directive -->
+     <!-- <div ng-app="" ng-init="names=['Ram','John','Rose']">
+         <ul>
+             <li ng-repeat="x in names">
+                   {{ x }}
+             </li>
+         </ul>
+     </div> -->
+     
+     <!-- Example for ng-repeat with data-bind Directive -->
+     <!-- <div ng-app="" ng-init="names=['Rose','John','Ram']">
+         <ul>
+             <li ng-repeat="x in names" ng-bind="x"/>
+         </ul>
+     </div> -->
+     
+     <!-- Example for ng-controller Directive -->
+     <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        First Name: <input type="text" ng-model="firstName"><br>
+        Last Name: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+     </div>
+
+     <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.firstName = "Shiva";
+            $scope.lastName = "Shankar";
+        });
+     </script> -->
+     
+     
+     <!-- Example for ng-controller with click event Directive -->
+     <!-- <div ng-app="myApp" ng-controller="myCtrl">
+       <h1 ng-click="changeName()">{{firstname}}</h1>
+     </div>
+     
+     <script>
+       var app = angular.module('myApp', []);
+       app.controller('myCtrl', function($scope) {
+          $scope.firstname = "John";
+          $scope.changeName = function() {
+             $scope.firstname = "Raj";
+          }
+       });
+     </script> -->
+
+     <!-- Example for $scope and $rootScope -->
+     <!-- <div ng-app="myApp">
+        <p>The rootScope's favorite color:</p>
+        <h1>{{color}}</h1>
+
+        <div ng-controller="myCtrl">
+           <p>The scope of the controller's favorite color:</p>
+           <h1>{{color}}</h1>
+        </div>
+        
+        <p>The rootScope's favorite color is still:</p>
+        <h1>{{color}}</h1>
+        <script>
+          var app = angular.module('myApp', []);
+          app.run(function($rootScope) {
+             $rootScope.color = 'blue';
+          });
+          
+          app.controller('myCtrl', function($scope) {
+             $scope.color = "red";
+          });
+        </script>
+     </div>  -->
+     
+     <!-- Example for filters -->
+     <!-- <div ng-app="myApp" ng-controller="myCtrl">
+       <p>The name is {{ firstName | uppercase }}</p>
+       <p>The name is {{ lastName | lowercase }}</p>
+       
+       <h1>Price: {{ price | currency }}</h1>
+       <h1>Price: {{ price | currency : '&#8377;' }}</h1>
+     </div>
+     
+     <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.firstName = "Shiva";
+            $scope.lastName = "Shankar";
+            
+            $scope.price = 58;
+        });
+     </script> -->
+
+    <!-- Example for filters -->
+	<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+		<ul>
+			<li ng-repeat="x in names | filter : 'i'">{{ x }}</li>
+		</ul>
+	</div>
+
+	<script>
+		angular.module('myApp', []).controller('namesCtrl',function($scope) {
+			$scope.names = [ 'Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai' ];
+		});
+	</script> -->
+	
+	<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+		<ul>
+			<li ng-repeat="x in names | orderBy : x">{{ x }}</li>
+		</ul>
+	</div>
+
+	<script>
+		angular.module('myApp', []).controller('namesCtrl',function($scope) {
+			$scope.names = [ 'Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai' ];
+		});
+	</script> -->
+	
+	<!-- Example for filters -->
+	<!-- <div ng-app="myApp" ng-controller="namesCtrl">
+		<ul>
+			<li ng-repeat="x in names | orderBy:'name'">{{ x.name }}</li>
+		</ul>
+		
+		<ul>
+			<li ng-repeat="x in names | orderBy:'country'">{{ x.country }}</li>
+		</ul>
+	</div>
+
+	<script>
+		angular.module('myApp', []).controller('namesCtrl',function($scope) {
+			$scope.names = [
+				{name:'Jani', country:'Norway'},
+			    {name:'Carl', country:'Sweden'},
+			    {name:'Margareth', country:'England'},
+			    {name:'Hege', country:'Norway'},
+			    {name:'Joe', country:'Denmark'},
+			    {name:'Gustav', country:'Sweden'},
+			    {name:'Birgit', country:'Denmark'},
+			    {name:'Mary', country:'England'},
+			    {name:'Kai', country:'Norway'}
+		   ];
+			
+		});
+	</script> -->
+
+</body>
+</html>
